@@ -66,6 +66,7 @@ Note:
 
 ### Step 5
 - Make sure you have file with usernames: (Example)
+
 ![](https://i.ibb.co/dp5QdjK/2.png)
 
 !!! Script will ask for Input and Output file, input file is username list, in output file script will store all scraped data !!!
