@@ -1,46 +1,52 @@
-from instagrapi import *
+from instagrapi import Client
 import json
 import os
 from formater import format_json
 
-# Funcs
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
-def get_data(username):
-    user_data = cl.user_info_by_username(username)
+os.system('cls' if os.name == 'nt' else 'clear')
+
+def get_data(username: str):
+    user_data = client.user_info_by_username(username)
     user_data = format_json(str(user_data))
     return user_data
     
-print("Welcome to Instagram Scraper")
-print("Made by: @0x00V1NDE77A")
-print("Loading credentials from file... ")
-with open('login.json') as f:
-    data = json.load(f)
+
+print( 
+f""" 
+Welcome to Instagram Scraper
+Made by: @0x00V1NDE77A
+Loading credentials from file... 
+""")
+
+with open('./login.json') as file:
+    data = json.load(file)
     ig_username = data['instagram_username']
     ig_password = data['instagram_password']
 
 # Login to Instagram
-cl = Client()
+client: object = Client()
 
-cl.login(ig_username, ig_password)
+client.login(ig_username, ig_password)
 
 # Check if login is success
 
-user_id = cl.user_id_from_username("instagram")
-print()
-print("[*] Checking if login is success...")
-if user_id == "25025320": print("[*] Instagram login is success")
+user_id = client.user_id_from_username("instagram")
+print("\n[*] Checking if login is success...")
 
-print()
-input_file = input("Enter input file name: ")
-output_file = input("Enter output file name: ")
-print()
+if user_id == "25025320":
+    print("[*] Instagram login is success\n")
+
+
+input_file: str = input("Enter input file name: ")
+output_file: str = input("Enter output file name: ")
+
+
 # do this for each line in the file
-with open(input_file, 'r') as f:
-    for line in f:
-        username = line.strip()
-        print("[*]Getting data for: " + username)
+with open(input_file, 'r') as file:
+    for data in file:
+        username: str = data.strip()
+        print(f"[*]Getting data for {username}")
         data = get_data(username)
-        with open(output_file, 'a') as f:
-            f.write("================================\n" + data + "\n================================")
+        with open(output_file, 'a') as file2:
+            file2.write("================================\n" + data + "\n================================")
