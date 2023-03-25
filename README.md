@@ -91,12 +91,10 @@ Here is example how output file will look like:
 Instagram has a limit on the amount of data that can be scraped per hour. If you exceed this limit, your IP address may be temporarily banned. 
 
 
+## Looking where to host all your infrastructure? (Get 200$ Free Credit)
+Make sure to check out: 
 
-
-Please use the tool responsibly
-This tool is for educational purposes only, and any misuse of this tool is not the responsibility of the developer :)
-
-Much Love, V1NDE77A
+[![DigitalOcean Referral Badge](https://storage.fucksociety.fun/site/content/badge1.png)](https://www.digitalocean.com/?refcode=342c0b99fd20&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 
 
